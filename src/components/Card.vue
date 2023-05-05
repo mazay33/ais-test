@@ -277,6 +277,9 @@ watch(
       position: absolute;
       left: -2.2rem;
       top: 0.3rem;
+      max-width: 1.6rem;
+      width: 100%;
+      margin-right: 1.6rem;
     }
   }
   &__info {

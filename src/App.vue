@@ -56,10 +56,15 @@ const uncheckAll = () => {
   margin-top: 2.9rem;
   & button{
     display: flex;
+    align-items:center;
     padding: .7rem 1.3rem; 
     gap: 1.2rem;
     background:#E5E5E5;
     cursor: pointer;
+    & img{
+      width: 100%;
+      max-width: 1.6rem;
+    }
   }
 }
 .search {

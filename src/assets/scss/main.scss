@@ -7,6 +7,15 @@ html {
     color: $mainFontColor;
     height: 100%;
     font-size: 10px;
+    @media screen and (min-width: 320px) {
+		font-size: calc(10vw / 7);
+	}
+    @media screen and (min-width: 600px) {
+		font-size: calc(10vw / 9);
+	}
+    @media screen and (min-width: 800px) {
+		font-size: calc(10vw / 11);
+	}
 	@media screen and (min-width: 1000px) {
 		font-size: calc(10vw / 13);
 	}
@@ -71,6 +80,7 @@ li {
     margin: 0 auto;
     width: 100%;
     max-width: 1400px;
+    padding: 0 1.6rem;
     @media (max-width: 1200px) {
         max-width: 1000px;
         padding: 0 1.6rem;
