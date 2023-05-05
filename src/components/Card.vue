@@ -24,8 +24,11 @@ const filteredData = computed(() => {
   const term = props.searchTerm.toLowerCase();
   return props.cardData.data.filter((data) => {
     return (
-      data.residential_complex.toLowerCase().includes(term) ||
-      data.address.toLowerCase().includes(term)
+      data.residential_complex?.toLowerCase().includes(term) ||
+      data.address?.toLowerCase().includes(term) ||
+      data.building_number?.toLowerCase().includes(term) ||
+      data.room_number?.toLowerCase().includes(term) ||
+      data.object_number?.toLowerCase().includes(term)
     );
   });
 });
