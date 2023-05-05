@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { computed, watch } from "vue";
 const props = defineProps({
   cardData: {
     type: Object,
@@ -7,6 +7,11 @@ const props = defineProps({
   },
   searchTerm: {
     type: String,
+    required: false,
+    default: "",
+  },
+  allChecked: {
+    type: Boolean,
     required: false,
     default: "",
   },
@@ -24,13 +29,22 @@ const filteredData = computed(() => {
     );
   });
 });
+
+watch(
+  () => props.allChecked,
+  (isChecked) => {
+    filteredData.value.forEach((data) => {
+      data.isChecked = isChecked;
+    });
+  }
+);
 </script>
 
 <template>
   <div v-for="data in filteredData" class="card">
     <div class="card__inner">
       <div class="card__checkbox">
-        <input type="checkbox" />
+        <input type="checkbox"  v-model="data.isChecked" :checked="allChecked" />
       </div>
       <div class="card__top">
         <div class="card__price">{{ data.price }} руб.</div>
